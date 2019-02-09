@@ -8,11 +8,8 @@ public class Main {
         //File myExpr = new File("expr1.txt");
         //FileReader reader = new FileReader(myExpr);
         Lexer lexer = new Lexer(reader);
-        String string = lexer.GetNextLexeme();
-        while (!string.equals("EOF")) {
-            System.out.println(string);
-            string = lexer.GetNextLexeme();
-        }
+        Parser parser = new Parser(lexer);
+        System.out.println(parser.parseExpr());
     }
 }
 
